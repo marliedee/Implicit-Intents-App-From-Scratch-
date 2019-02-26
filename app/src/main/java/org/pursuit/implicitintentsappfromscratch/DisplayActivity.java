@@ -31,16 +31,12 @@ public class DisplayActivity extends AppCompatActivity {
         date = findViewById(R.id.zodiac_date);
         button = findViewById(R.id.zodiac_button);
 
-
         final String nameZodiac = intent.getStringExtra("name");
         String dateZodiac = intent.getStringExtra("date");
+
         Picasso.get().load(intent.getStringExtra("image")).into(imageView);
-
-
-
         sign.setText(nameZodiac);
         date.setText(dateZodiac);
-
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
                 recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                 ZodiacAdapter adapter = new ZodiacAdapter(response.body().getZodiac());
                 recyclerView.setAdapter(adapter);
-
             }
 
             @Override
