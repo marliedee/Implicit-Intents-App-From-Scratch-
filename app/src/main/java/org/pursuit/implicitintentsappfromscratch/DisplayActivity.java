@@ -9,9 +9,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 public class DisplayActivity extends AppCompatActivity {
 
-    private ImageView image;
+    private ImageView imageView;
     private TextView sign;
     private TextView date;
     private Button button;
@@ -24,18 +26,21 @@ public class DisplayActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        final String nameZodiac = intent.getStringExtra("name");
-        String dateZodiac = intent.getStringExtra("date");
-        String imageZodiac = intent.getStringExtra("image");
-
-
         sign = findViewById(R.id.zodiac_sign);
-        image = findViewById(R.id.zodiac_image);
+        imageView = findViewById(R.id.zodiac_image);
         date = findViewById(R.id.zodiac_date);
         button = findViewById(R.id.zodiac_button);
 
+
+        final String nameZodiac = intent.getStringExtra("name");
+        String dateZodiac = intent.getStringExtra("date");
+        Picasso.get().load(intent.getStringExtra("image")).into(imageView);
+
+
+
         sign.setText(nameZodiac);
         date.setText(dateZodiac);
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
