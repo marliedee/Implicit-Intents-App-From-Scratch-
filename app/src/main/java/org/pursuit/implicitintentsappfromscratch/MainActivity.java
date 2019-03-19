@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         recyclerView = findViewById(R.id.zodiac_recyclerview);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
         retro = RetrofitSingleton.getInstance();
         ZodiacService service = retro.create(ZodiacService.class);
@@ -35,8 +36,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onResponse(Call<ZodiacOuter> call, Response<ZodiacOuter> response) {
-                Log.d(TAG, "onResponse: " + response.body().getZodiac().get(0).getName());
-                recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                 ZodiacAdapter adapter = new ZodiacAdapter(response.body().getZodiac());
                 recyclerView.setAdapter(adapter);
             }

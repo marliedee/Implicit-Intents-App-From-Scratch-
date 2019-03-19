@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import org.pursuit.implicitintentsappfromscratch.R;
-import org.pursuit.implicitintentsappfromscratch.model.ZodiacOuter;
 import org.pursuit.implicitintentsappfromscratch.model.Zodiacs;
 import org.pursuit.implicitintentsappfromscratch.view.ZodiacViewHolder;
 

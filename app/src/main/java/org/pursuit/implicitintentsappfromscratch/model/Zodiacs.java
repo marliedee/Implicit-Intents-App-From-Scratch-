@@ -6,18 +6,6 @@ public class Zodiacs {
     private String number;
     private String image;
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setNumber(String number) {
-        this.number = number;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
     public Zodiacs(String name, String number, String image) {
         this.name = name;
         this.number = number;
